@@ -9,33 +9,84 @@ import {ModalService}         from 'modules/modal/modal-service';
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<h5>September</h5>
+						<h4>September</h4>
 						<ul>
-							<li><p>Election Day</p></li>
-							<li *ngFor="let event of events">{{event.EventName}}</li>
+							<li>
+								<p class="underline">Wednesday, September 14th</p>
+								<p><b>Ladies' Night at the Victory Center</b></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+							</li>
+							<li>
+								<p class="underline">Saturday, September 17th</p>
+								<p><b>Constitution Day Celebration</b></p>
+								<p>Locations</p>
+								<p><b>Super Saturday</b></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+							</li>
+							<li>
+								<p class="underline">Wednesday, September 21st</p>
+								<p><b>Ladies' Night at the Victory Center</b></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+							</li>
+							<li>
+								<p class="underline">Wednesday, September 28th</p>
+								<p><b>Ladies' Night at the Victory Center</b></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+							</li>
 						</ul>
 					</div>
 					<div class="col-md-4">
-						<h5>October</h5>
+						<h4>October</h4>
 						<ul>
-							<li><p>Election Day</p></li>
-							<li *ngFor="let event of events">{{event.EventName}}</li>
+							<li>
+								<p class="underline">Wednesday, October 5th</p>
+								<p><b>Ladies' Night at the Victory Center</b></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+							</li>
+							<li>
+								<p class="underline">Wednesday, October 12th</p>
+								<p><b>Ladies' Night at the Victory Center</b></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+							</li>
+							<li>
+								<p class="underline">Wednesday, October 19th</p>
+								<p><b>Ladies' Night at the Victory Center</b></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+							</li>
+							<li>
+								<p class="underline">Wednesday, October 26th</p>
+								<p><b>Ladies' Night at the Victory Center</b></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+							</li>
 						</ul>
 					</div>
 					<div class="col-md-4">
-						<h5>November</h5>
+						<h4>November</h4>
 						<ul>
-							<li><p>Election Day</p></li>
+							<li>
+								<p class="underline">Wednesday, November 2nd</p>
+								<p><b>Ladies' Night at the Victory Center</b></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+							</li>
+							<li>
+								<p class="underline">Tuesday, November 8th</p>
+								<p><b>Election Day</b></p>
+								<p>Locations</p>
+							</li>
 							<li *ngFor="let event of events">{{event.EventName}}</li>
 						</ul>
 					</div>
 				</div>
-				<button class="btn btn-md btn-color" (click)="showModal()">Submit an Event</button>
+<!--				<button class="btn btn-md btn-color" (click)="showModal()">Submit an Event</button> -->
 			</div>
 		</section>
 	`,
 	styles:					[`
-		ul {list-style: none;}
+		ul {list-style: none; padding-left: 0;}
+		li {margin-bottom: 15px;}
+		a {color: #fff;}
+		p {margin-bottom: 0;}
+		.underline {text-decoration: underline;}
 		section {z-index: 1000;}
 	`]
 })
