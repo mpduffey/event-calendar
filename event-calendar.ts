@@ -88,6 +88,7 @@ import {ModalService}         from 'modules/modal/modal-service';
 		p {margin-bottom: 0;}
 		.underline {text-decoration: underline;}
 		section {z-index: 1000;}
+		.col-md-4 {margin-bottom: 20px;}
 	`]
 })
 
@@ -125,7 +126,7 @@ export class EventCalendar implements OnInit {
 		this.modal = modal;
 	}
 	ngOnInit() {
-		this.data.getEvents().subscribe(x => console.log("Events: ", x);)
+		this.data.getEvents().subscribe(x => {console.log("Events: ", x);});
 	}
 	showModal = () => {
 		this.modal.formObject = this.eventObject;
