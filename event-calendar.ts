@@ -9,7 +9,7 @@ import {ModalService}         from 'modules/modal/modal-service';
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<h4>September</h4>
+						<h3>September</h3>
 						<ul>
 							<li>
 								<p class="underline">Wednesday, September 14th</p>
@@ -36,7 +36,7 @@ import {ModalService}         from 'modules/modal/modal-service';
 						</ul>
 					</div>
 					<div class="col-md-4">
-						<h4>October</h4>
+						<h3>October</h3>
 						<ul>
 							<li>
 								<p class="underline">Wednesday, October 5th</p>
@@ -61,7 +61,7 @@ import {ModalService}         from 'modules/modal/modal-service';
 						</ul>
 					</div>
 					<div class="col-md-4">
-						<h4>November</h4>
+						<h3>November</h3>
 						<ul>
 							<li>
 								<p class="underline">Wednesday, November 2nd</p>
@@ -88,7 +88,7 @@ import {ModalService}         from 'modules/modal/modal-service';
 		p {margin-bottom: 0;}
 		.underline {text-decoration: underline;}
 		section {z-index: 1000;}
-		.col-md-4 {margin-bottom: 20px;}
+		.col-md-4 {margin-bottom: 30px;}
 	`]
 })
 
