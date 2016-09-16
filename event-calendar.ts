@@ -12,26 +12,34 @@ import {ModalService}         from 'modules/modal/modal-service';
 						<h3>September</h3>
 						<ul>
 							<li>
-								<p class="underline">Wednesday, September 14th</p>
-								<p><b>Ladies' Night at the Victory Center</b></p>
-								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
-							</li>
-							<li>
-								<p class="underline">Saturday, September 17th</p>
+								<h5>Saturday, September 17th</h5>
+								<hr>
 								<p><b>Constitution Day Celebration</b></p>
-								<p>Locations</p>
+								<p>Locations: La Crosse, Outagamie, Waukesha, Shawano, Wausau, West Bend, Milwaukee, and Dane County Victory Centers</p>
+								<p>Contact: Charlotte Rasmussen, <a href="mailto:charlotter@ceas.coop">charlotter@ceas.coop</a>, (715) 551-9724</p>
+								<br>
 								<p><b>Super Saturday</b></p>
-								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">All RPW Victory Offices</a></p>
 							</li>
 							<li>
-								<p class="underline">Wednesday, September 21st</p>
+								<h5>Wednesday, September 21st</h5>
+								<hr>
 								<p><b>Ladies' Night at the Victory Center</b></p>
-								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">Select RPW Victory Offices</a></p>
 							</li>
 							<li>
-								<p class="underline">Wednesday, September 28th</p>
+								<h5>Monday, September 26th</h5>
+								<hr>
+								<p><b>Milwaukee Debate Viewing Party</b></p>
+								<p>6:30pm-9:30pm</p>
+								<p> Amelia’s - 724 East Layton Avenue, Milwaukee, WI</p>
+								<p>Contact Darlene Wink: (414) 553-8551</p>
+							</li>
+							<li>
+								<h5>Wednesday, September 28th</h5>
+								<hr>
 								<p><b>Ladies' Night at the Victory Center</b></p>
-								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">Select RPW Victory Offices</a></p>
 							</li>
 						</ul>
 					</div>
@@ -39,24 +47,28 @@ import {ModalService}         from 'modules/modal/modal-service';
 						<h3>October</h3>
 						<ul>
 							<li>
-								<p class="underline">Wednesday, October 5th</p>
+								<h5>Wednesday, October 5th</h5>
+								<hr>
 								<p><b>Ladies' Night at the Victory Center</b></p>
-								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">Select RPW Victory Offices</a></p>
 							</li>
 							<li>
-								<p class="underline">Wednesday, October 12th</p>
+								<h5>Wednesday, October 12th</h5>
+								<hr>
 								<p><b>Ladies' Night at the Victory Center</b></p>
-								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">Select RPW Victory Offices</a></p>
 							</li>
 							<li>
-								<p class="underline">Wednesday, October 19th</p>
+								<h5>Wednesday, October 19th</h5>
+								<hr>
 								<p><b>Ladies' Night at the Victory Center</b></p>
-								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">Select RPW Victory Offices</a></p>
 							</li>
 							<li>
-								<p class="underline">Wednesday, October 26th</p>
+								<h5>Wednesday, October 26th</h5>
+								<hr>
 								<p><b>Ladies' Night at the Victory Center</b></p>
-								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">Select RPW Victory Offices</a></p>
 							</li>
 						</ul>
 					</div>
@@ -64,14 +76,15 @@ import {ModalService}         from 'modules/modal/modal-service';
 						<h3>November</h3>
 						<ul>
 							<li>
-								<p class="underline">Wednesday, November 2nd</p>
+								<h5>Wednesday, November 2nd</h5>
+								<hr>
 								<p><b>Ladies' Night at the Victory Center</b></p>
-								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">RPW Victory Offices</a></p>
+								<p><a href="https://www.wisgop.org/volunteer/" target="_blank">Select RPW Victory Offices</a></p>
 							</li>
 							<li>
-								<p class="underline">Tuesday, November 8th</p>
+								<h5>Tuesday, November 8th</h5>
+								<hr>
 								<p><b>Election Day</b></p>
-								<p>Locations</p>
 							</li>
 							<li *ngFor="let event of events">{{event.EventName}}</li>
 						</ul>
@@ -84,6 +97,7 @@ import {ModalService}         from 'modules/modal/modal-service';
 	styles:					[`
 		ul {list-style: none; padding-left: 0;}
 		li {margin-bottom: 15px;}
+		h5 {margin-bottom: 0; margin-top: 25px;}
 		a {color: #fff;}
 		p {margin-bottom: 0;}
 		.underline {text-decoration: underline;}
