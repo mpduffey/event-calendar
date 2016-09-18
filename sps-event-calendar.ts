@@ -98,7 +98,7 @@ export class SpsEventCalendar implements OnInit {
 		this.monthArr = [];
 		let months = [];
 		arr.forEach((x,i,arr) => {
-			if !months.includes(x.date.getMonth()) {
+			if (months.includes(x.date.getMonth())) {
 				let mon = new Date();
 				mon.setUTCMonth(x.date.getMonth());
 				months.push(x.date.getMonth());
