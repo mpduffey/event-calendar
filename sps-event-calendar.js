@@ -58,7 +58,7 @@ var SpsEventCalendar = (function () {
             _this.monthArr = [];
             var months = [];
             arr.forEach(function (x, i, arr) {
-                if (months.includes(x.date.getMonth())) {
+                if (!months.includes(x.date.getMonth())) {
                     var mon = new Date();
                     mon.setUTCMonth(x.date.getMonth());
                     months.push(x.date.getMonth());
