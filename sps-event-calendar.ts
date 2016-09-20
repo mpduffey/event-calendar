@@ -1,5 +1,4 @@
 import {Component, OnInit, Input}		from '@angular/core';
-import {WFTDataService}							from 'modules/wft-data/wft-data';
 import {ModalService}								from 'modules/modal/modal-service';
 import {Filter}											from 'modules/filter-pipe/filter-pipe';
 
