@@ -1,5 +1,4 @@
 import {Component, OnInit, Input}		from '@angular/core';
-import {ModalService}								from 'modules/modal/modal-service';
 import {Filter}											from 'modules/filter-pipe/filter-pipe';
 
 @Component({
@@ -74,12 +73,8 @@ export class SpsEventCalendar implements OnInit {
 	};
 	monthArr = [];
 	
-	constructor(private data: WFTDataService, private modal: ModalService) {
-		this.data = data;
-		this.modal = modal;
-	}
+	constructor() {}
 	ngOnInit() {
-		this.data.getEvents().subscribe(x => {console.log("Events: ", x);});
 		this.getMonths(this.events);
 	}
 	checkExist = (val) => {
@@ -87,11 +82,6 @@ export class SpsEventCalendar implements OnInit {
 	}
 	checkType = (val) => {
 		return typeof val;
-	}
-	showModal = () => {
-		this.modal.formObject = this.eventObject;
-		this.modal.title = "Suggest an Event for the Women for Trump!";
-		this.modal.showModal = true;
 	}
 	getMonths = (arr) => {
 		this.monthArr = [];

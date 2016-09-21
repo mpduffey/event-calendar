@@ -9,13 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var wft_data_1 = require('modules/wft-data/wft-data');
-var modal_service_1 = require('modules/modal/modal-service');
 var SpsEventCalendar = (function () {
-    function SpsEventCalendar(data, modal) {
+    function SpsEventCalendar() {
         var _this = this;
-        this.data = data;
-        this.modal = modal;
         this.eventFields = [
             { name: "EventName", type: "STRING", defaultValue: "", custom: { label: "Event Name", labelAbove: false, css: { input: { width: "400px" }, group: { display: "block", "margin-right": "1px", "margin-bottom": "5px" } } } },
             { name: "StartTime", type: "DATETIME", defaultValue: "", custom: { label: "Start Time", labelAbove: false, css: { input: { width: "197px" }, group: { display: "inline-block", "margin-right": "1px", "margin-bottom": "5px" } } } },
@@ -49,11 +45,6 @@ var SpsEventCalendar = (function () {
         this.checkType = function (val) {
             return typeof val;
         };
-        this.showModal = function () {
-            _this.modal.formObject = _this.eventObject;
-            _this.modal.title = "Suggest an Event for the Women for Trump!";
-            _this.modal.showModal = true;
-        };
         this.getMonths = function (arr) {
             _this.monthArr = [];
             var months = [];
@@ -66,11 +57,8 @@ var SpsEventCalendar = (function () {
                 }
             });
         };
-        this.data = data;
-        this.modal = modal;
     }
     SpsEventCalendar.prototype.ngOnInit = function () {
-        this.data.getEvents().subscribe(function (x) { console.log("Events: ", x); });
         this.getMonths(this.events);
     };
     __decorate([
@@ -83,10 +71,9 @@ var SpsEventCalendar = (function () {
             template: "\n\t\t<section id=\"calendar\" class=\"section-padding bg-image overlay-dark dark-bg text-center\" data-stellar-background-ratio=\"0.5\" data-background-img=\"img/full/33.jpg\">\n\t\t\t<div class=\"container\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div *ngFor=\"let month of monthArr\" class=\"col-md-4\">\n\t\t\t\t\t\t<h3>{{month | date:\"MMMM\"}}</h3>\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li *ngFor=\"let event of events | filter:month.getMonth(); let i = index\">\n\t\t\t\t\t\t\t\t<div *ngIf=\"i===0 || event.date.toDateString() !== events[i-1].date.toDateString()\">\n\t\t\t\t\t\t\t\t\t<h5>{{event.date | date:'fullDate'}}</h5>\n\t\t\t\t\t\t\t\t\t<hr>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<p><b>{{event.name}}</b></p>\n\t\t\t\t\t\t\t\t<p *ngIf=\"event.date.getHours()\">{{event.date | date:\"shortTime\"}}<span *ngIf=\"event.endDate\"> - {{event.endDate | date:\"shortTime\"}}</span></p>\n\t\t\t\t\t\t\t\t<p *ngIf=\"event.location\"><b>Location: </b>{{event.location}}</p>\n\t\t\t\t\t\t\t\t<p *ngIf=\"checkType(event.contact)!=='undefined'\"><b>Contact: </b><span *ngIf=\"checkType(event.contact)==='string'\">{{event.contact}}</span>\n\t\t\t\t\t\t\t\t\t<span *ngIf=\"checkExist(event.contact.name)\">{{event.contact.name}}<span *ngIf=\"checkExist(event.contact.name) && (checkExist(event.contact.phone) || checkExist(event.contact.email))\">,</span></span>\n\t\t\t\t\t\t\t\t\t<span *ngIf=\"checkExist(event.contact.phone)\">{{event.contact.phone}}<span *ngIf=\"(checkExist(event.contact.phone) && checkExist(event.contact.email))\">,</span></span>\n\t\t\t\t\t\t\t\t\t<span *ngIf=\"checkExist(event.contact.email)\"><a href=\"mailto:{{event.contact.email}}\" target=\"_top\">{{event.contact.email}}</a></span>\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n<!--\t\t<button class=\"btn btn-md btn-color\" (click)=\"showModal()\">Submit an Event</button> -->\n\t\t\t</div>\n\t\t</section>\n\t",
             styles: ["\n\t\tul {list-style: none; padding-left: 0;}\n\t\tli {margin-bottom: 15px;}\n\t\th5 {margin-bottom: 0; margin-top: 25px;}\n\t\ta {color: #fff;}\n\t\tp {margin-bottom: 0;}\n\t\t.underline {text-decoration: underline;}\n\t\tsection {z-index: 1000;}\n\t\t.col-md-4 {margin-bottom: 30px;}\n\t"]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof wft_data_1.WFTDataService !== 'undefined' && wft_data_1.WFTDataService) === 'function' && _a) || Object, (typeof (_b = typeof modal_service_1.ModalService !== 'undefined' && modal_service_1.ModalService) === 'function' && _b) || Object])
+        __metadata('design:paramtypes', [])
     ], SpsEventCalendar);
     return SpsEventCalendar;
-    var _a, _b;
 }());
 exports.SpsEventCalendar = SpsEventCalendar;
 //# sourceMappingURL=sps-event-calendar.js.map
