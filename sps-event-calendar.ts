@@ -11,7 +11,7 @@ import {Filter}											from 'modules/filter-pipe/filter-pipe';
 						<h3>{{month | date:"MMMM"}}</h3>
 						<ul>
 							<li *ngFor="let event of events | filter:month.getMonth(); let i = index">
-								<div *ngIf="i===0 || event.date.toDateString() !== events[i-1].date.toDateString()">
+								<div *ngIf="i===0 || events[i].date.toDateString() !== events[i-1].date.toDateString()">
 									<h5>{{event.date | date:'fullDate'}}</h5>
 									<hr>
 								</div>
