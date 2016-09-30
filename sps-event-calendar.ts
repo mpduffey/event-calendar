@@ -7,11 +7,11 @@ import {Filter}											from 'modules/filter-pipe/filter-pipe';
 		<section id="calendar" class="section-padding bg-image overlay-dark dark-bg text-center" data-stellar-background-ratio="0.5" data-background-img="img/full/33.jpg">
 			<div class="container">
 				<div class="row">
-					<div *ngFor="let month of monthArr" class="col-md-4">
+					<div *ngFor="let month of monthArr" class="col-md-6">
 						<h3>{{month | date:"MMMM"}}</h3>
 						<ul>
 							<li *ngFor="let event of events | filter:month.getMonth(); let i = index">
-								<div *ngIf="i===0 || events[i].date.toDateString() !== events[i-1].date.toDateString()">
+								<div *ngIf="i===0 || event.date.toDateString() != filterArr(events, month.getMonth())[i-1].date.toDateString()">
 									<h5>{{event.date | date:'fullDate'}}</h5>
 									<hr>
 								</div>
@@ -94,5 +94,10 @@ export class SpsEventCalendar implements OnInit {
 				this.monthArr.push(mon);
 			}
 		});
+	}
+	filterArr = (arr, month) => {
+		return arr.filter(function (x) {
+			return x.date.getMonth() === month;
+		})
 	}
 }
