@@ -51,7 +51,7 @@ var SpsEventCalendar = (function () {
             arr.forEach(function (x, i, arr) {
                 if (!months.includes(x.date.getMonth())) {
                     var mon = new Date();
-                    mon.setUTCMonth(x.date.getMonth());
+                    mon.setMonth(x.date.getMonth());
                     months.push(x.date.getMonth());
                     _this.monthArr.push(mon);
                 }
@@ -74,7 +74,7 @@ var SpsEventCalendar = (function () {
         core_1.Component({
             selector: 'sps-event-calendar',
             template: "\n\t\t<section id=\"calendar\" class=\"section-padding bg-image overlay-dark dark-bg text-center\" data-stellar-background-ratio=\"0.5\" data-background-img=\"img/full/33.jpg\">\n\t\t\t<div class=\"container\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div *ngFor=\"let month of monthArr\" class=\"col-md-6\">\n\t\t\t\t\t\t<h3>{{month | date:\"MMMM\"}}</h3>\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li *ngFor=\"let event of events | filter:month.getMonth(); let i = index\">\n\t\t\t\t\t\t\t\t<div *ngIf=\"i===0 || event.date.toDateString() != filterArr(events, month.getMonth())[i-1].date.toDateString()\">\n\t\t\t\t\t\t\t\t\t<h5>{{event.date | date:'fullDate'}}</h5>\n\t\t\t\t\t\t\t\t\t<hr>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<p><b>{{event.name}}</b></p>\n\t\t\t\t\t\t\t\t<p *ngIf=\"event.date.getHours()\">{{event.date | date:\"shortTime\"}}<span *ngIf=\"event.endDate\"> - {{event.endDate | date:\"shortTime\"}}</span></p>\n\t\t\t\t\t\t\t\t<p *ngIf=\"event.location\"><b>Location: </b>{{event.location}}</p>\n\t\t\t\t\t\t\t\t<p *ngIf=\"checkType(event.contact)!=='undefined'\"><b>Contact: </b><span *ngIf=\"checkType(event.contact)==='string'\">{{event.contact}}</span>\n\t\t\t\t\t\t\t\t\t<span *ngIf=\"checkExist(event.contact.name)\">{{event.contact.name}}<span *ngIf=\"checkExist(event.contact.name) && (checkExist(event.contact.phone) || checkExist(event.contact.email))\">,</span></span>\n\t\t\t\t\t\t\t\t\t<span *ngIf=\"checkExist(event.contact.phone)\">{{event.contact.phone}}<span *ngIf=\"(checkExist(event.contact.phone) && checkExist(event.contact.email))\">,</span></span>\n\t\t\t\t\t\t\t\t\t<span *ngIf=\"checkExist(event.contact.email)\"><a href=\"mailto:{{event.contact.email}}\" target=\"_top\">{{event.contact.email}}</a></span>\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n<!--\t\t<button class=\"btn btn-md btn-color\" (click)=\"showModal()\">Submit an Event</button> -->\n\t\t\t</div>\n\t\t</section>\n\t",
-            styles: ["\n\t\tul {list-style: none; padding-left: 0;}\n\t\tli {margin-bottom: 15px;}\n\t\th5 {margin-bottom: 0; margin-top: 25px;}\n\t\ta {color: #fff;}\n\t\tp {margin-bottom: 0;}\n\t\t.underline {text-decoration: underline;}\n\t\tsection {z-index: 1000;}\n\t\t.col-md-4 {margin-bottom: 30px;}\n\t"]
+            styles: ["\n\t\tul {list-style: none; padding-left: 0;}\n\t\tli {margin-bottom: 35px;}\n\t\th5 {margin-bottom: 0; margin-top: 25px;}\n\t\ta {color: #fff;}\n\t\tp {margin-bottom: 0;}\n\t\t.underline {text-decoration: underline;}\n\t\tsection {z-index: 1000;}\n\t\t.col-md-4 {margin-bottom: 30px;}\n\t"]
         }), 
         __metadata('design:paramtypes', [])
     ], SpsEventCalendar);

@@ -33,7 +33,7 @@ import {Filter}											from 'modules/filter-pipe/filter-pipe';
 	`,
 	styles:					[`
 		ul {list-style: none; padding-left: 0;}
-		li {margin-bottom: 15px;}
+		li {margin-bottom: 35px;}
 		h5 {margin-bottom: 0; margin-top: 25px;}
 		a {color: #fff;}
 		p {margin-bottom: 0;}
@@ -89,7 +89,7 @@ export class SpsEventCalendar implements OnInit {
 		arr.forEach((x,i,arr) => {
 			if (!months.includes(x.date.getMonth())) {
 				let mon = new Date();
-				mon.setUTCMonth(x.date.getMonth());
+				mon.setMonth(x.date.getMonth());
 				months.push(x.date.getMonth());
 				this.monthArr.push(mon);
 			}
